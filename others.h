@@ -6,11 +6,11 @@
 
 using namespace std;
 
-struct Neighbor_v{      //構造体（要素番号と距離）
+struct Neighbor_v{
     int num;
     float dist;
     bool operator<(const Neighbor_v& other) const {
-        return dist > other.dist;       //distの小ささで比較
+        return dist > other.dist;
     }
 };
 

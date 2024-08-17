@@ -36,20 +36,19 @@ int main(int argc, char *argv[]){
 
 
     //searching
-    for(int query_num=0; query_num < queries.size(); query_num++){ //クエリの個数分繰り返し
+    for(int query_num=0; query_num < queries.size(); query_num++){
         auto start_time = chrono::high_resolution_clock::now();
-        vector<int> start_node = select_start_node(embeddings, norm, centers, weights[query_num], lange, queries[query_num], metrics); //初期探索点、グラフ探索順
-        vector<int> visit_check(embeddings.size(), 0); //探索済みならば1に
+        vector<int> start_node = select_start_node(embeddings, norm, centers, weights[query_num], lange, queries[query_num], metrics);
+        vector<int> visit_check(embeddings.size(), 0);
         visit_check[start_node[0]] = 1;
         multimap<float, int> Candidate;
         multimap<float, int> Candidate_copy;
         Neighbor_v start_struct;
         float tau = inf;
 
-        for(int metric=1; metric < start_node.size(); metric++){ //探索をグラフの個数回繰り返す
+        for(int metric=1; metric < start_node.size(); metric++){
             if(weights[query_num][start_node[metric]]!=0.0){
 
-                //１初期探索点選択と追加
                 if(Candidate.empty()){
                     start_struct.num = start_node[0];
                     start_struct.dist = dist_all(embeddings, norm, weights[query_num], lange, queries[query_num], start_node[0], metrics);
@@ -60,10 +59,6 @@ int main(int argc, char *argv[]){
                 Candidate_copy.emplace(start_struct.dist, start_struct.num);
 
 
-                //１終了
-
-
-                //２候補がなくなるまで探索
                 while(!Candidate_copy.empty()){
                     multimap<float, int>::iterator it = Candidate_copy.begin();
                     int candidate_num = it->second;
@@ -87,7 +82,6 @@ int main(int argc, char *argv[]){
                         }
                     }
                 }
-                //２終了
             }
         }
 

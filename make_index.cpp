@@ -18,7 +18,6 @@ int main() {
     float l = 0;
 
     // dataset
-    //string data = "dataset.csv";
     read_embeddings(data_name, data_num, lange, metrics, embeddings);
 
     for (int i = 1; i < lange.size(); i++) {

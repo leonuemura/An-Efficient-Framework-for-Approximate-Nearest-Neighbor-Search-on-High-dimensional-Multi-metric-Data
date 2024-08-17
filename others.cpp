@@ -272,7 +272,7 @@ Neighbor_v select_best_node(const vector<vector<float>>& dataset, const multimap
 
 
 void addKItems(const multimap<float, int>& candidate, vector<int>& vec, int k) {
-    auto it = candidate.begin(); // multimapの先頭を指すイテレータ
+    auto it = candidate.begin(); 
     while(k > 0){
         vec.push_back(it -> second);
         ++it;
