@@ -11,11 +11,11 @@ The dataset used in this project should be formatted as follows:
 - **Third line**: The distance function identifiers for each metric (e.g., L1 is represented by 1, and L2 by 2). These identifiers can be customized by modifying `distance.cpp`.
 - **Fourth line and onwards**: The actual data points. Each line represents one data point, and the elements on each line are separated by spaces. Each data point is a vector of real numbers, corresponding to the dimensions specified in the second line.
 
-For testing purposes, this repository includes dataset.csv, which was created from the dataset available at https://kdd.ics.uci.edu/databases/CorelFeatures/CorelFeatures.
+For testing purposes, this repository includes data.csv, which was created from the dataset available at https://kdd.ics.uci.edu/databases/CorelFeatures/CorelFeatures.
 
 ### 2. Queryset Format
 The actual data points. Each line represents one data point, and the elements on each line are separated by spaces.
-For testing purposes, this repository includes query.csv, which was created from the the same dataset as dataset.csv.
+For testing purposes, this repository includes query.csv, which was created from the the same dataset as data.csv.
 
 ### 3. Weightset Format
 The weights used during the search are defined in this file. Each row corresponds to a row in the query set and consists of weights for each metric, with the elements on each line separated by spaces. Please note that the sum of the weights in each row must equal 1.
