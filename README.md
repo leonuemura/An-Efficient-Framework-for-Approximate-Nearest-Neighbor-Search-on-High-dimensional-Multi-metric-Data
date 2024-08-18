@@ -15,7 +15,7 @@ For testing purposes, this repository includes dataset.csv, which was created fr
 
 ### 2. Queryset Format
 The actual data points. Each line represents one data point, and the elements on each line are separated by spaces.
-For testing purposes, this repository includes query.csv, which was created from the dataset available at https://kdd.ics.uci.edu/databases/CorelFeatures/CorelFeatures.
+For testing purposes, this repository includes query.csv, which was created from the the same dataset as dataset.csv.
 
 ### 3. Weightset Format
 The weights used during the search are defined in this file. Each row corresponds to a row in the query set and consists of weights for each metric, with the elements on each line separated by spaces. Please note that the sum of the weights in each row must equal 1.
